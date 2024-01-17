@@ -4,6 +4,8 @@
 
 #define PRECISION 5
 
+#define MAX_KEYWORD_AMOUNT 5
+
 typedef enum {DISTANCE_UNIT, TEMPERATURE_UNIT} unit_class_t;
 
 typedef struct {
@@ -17,7 +19,7 @@ typedef struct {
 	bignum_t* (*conversion_function)(bignum_t* input, bool inverse);
 
 	// first element is unit name singular, second plural
-	char* keywords[]; // last element has to be NULL
+	const char* keywords[MAX_KEYWORD_AMOUNT]; // last element has to be NULL
 } unit_t;
 
 const unit_t* get_unit_by_keyword(const char* keyword);
