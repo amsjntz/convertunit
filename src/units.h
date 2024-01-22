@@ -1,3 +1,5 @@
+#pragma once
+
 #include <bignum.h>
 
 #include <stdbool.h>
@@ -23,5 +25,7 @@ typedef struct {
 } unit_t;
 
 const unit_t* get_unit_by_keyword(const char* keyword);
+
+const char* get_unit_name(const unit_t* unit, bool plural);
 
 bignum_t* convert_units(bignum_t* input, const unit_t* from, const unit_t* to);

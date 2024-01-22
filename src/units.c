@@ -37,6 +37,10 @@ const unit_t* get_unit_by_keyword(const char* keyword) {
 	return NULL;
 }
 
+const char* get_unit_name(const unit_t* unit, bool plural) {
+	return unit->keywords[plural ? 1 : 0];
+}
+
 bignum_t* convert_units(bignum_t* input, const unit_t* from, const unit_t* to) {
 	if (from->unit_class != to->unit_class) {
 		return NULL;

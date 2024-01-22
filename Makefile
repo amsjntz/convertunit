@@ -23,5 +23,5 @@ run: compile
 
 clean:
 	find . -type f -name '*.o' -delete
-	rm vgcore.*
+	rm -f vgcore.*
 
